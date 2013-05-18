@@ -9,8 +9,12 @@ import org.json.JSONObject;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.StrictMode;
+import android.util.Log;
 import android.widget.ListAdapter;
+import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 
 public class DirectoryListActivity extends Activity {
 	private static String url = "http://gdglapaz.codigobase.com/index.php";
@@ -18,8 +22,8 @@ public class DirectoryListActivity extends Activity {
 	
 	private static final String TAG_CLIENTS = "listado";
 	private static final String TAG_ID = "id";
-	private static final String TAG_NAME = "name";
-	private static final String TAG_CUENTA = "cuenta";
+	private static final String TAG_NAME = "nombre";
+	private static final String TAG_CUENTA = "cuenta_plus";
 	
 	// contacts JSONArray
 	JSONArray contacts = null;
@@ -37,6 +41,9 @@ public class DirectoryListActivity extends Activity {
 		JSONParser jParser = new JSONParser();
 
 		// getting JSON string from URL
+		StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+		StrictMode.setThreadPolicy(policy);
+		 
 		JSONObject json = jParser.getJSONFromUrl(url);
 		
 		try {
@@ -64,17 +71,21 @@ public class DirectoryListActivity extends Activity {
 
 				// adding HashList to ArrayList
 				contactList.add(map);
+				Log.i("valor obtenido", name);
 			}
 		} catch (JSONException e) {
-			e.printStackTrace();
+			e.getMessage();
 		}
+		
+		//Toast.makeText(getApplicationContext(), "llego", Toast.LENGTH_SHORT).show();
 		
 		ListAdapter adapter = new SimpleAdapter(this, contactList,
 				R.layout.list_directory_item ,
 				new String[] { TAG_NAME}, new int[] {
 						R.id.nombre });
 
-		//setListAdapter(adapter);
+		ListView lvParticipantes = (ListView) findViewById(R.id.participantes);
+		lvParticipantes.setAdapter(adapter);
 
 		// selecting single ListView item
 		/*ListView lv = getListView();*/
