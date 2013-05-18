@@ -42,12 +42,12 @@ public class MainActivity extends Activity {
 
 		launchOauth = (Button) findViewById(R.id.btn_launch_oauth);
 	
-		launchOauth.setOnClickListener(new View.OnClickListener() {
+		/*launchOauth.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View v) {
 				startActivity(new Intent().setClass(v.getContext(),
 						OAuthActivity.class));
 			}
-		});
+		});*/
 
 			
 	

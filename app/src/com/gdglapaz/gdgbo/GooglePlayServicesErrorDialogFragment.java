@@ -21,7 +21,7 @@ import com.google.android.gms.common.GooglePlayServicesUtil;
 import android.app.Dialog;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
-
+ 
 /**
  * Wraps the {@link Dialog} returned by {@link GooglePlayServicesUtil#getErrorDialog}
  * so that it can be properly managed by the {@link android.app.Activity}.
