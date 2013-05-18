@@ -35,6 +35,10 @@ public class MainActivity extends Activity {
 		return true;
 	}
 	
+	public void showMainMenu(View v) {
+		startActivity(new Intent(this, MainMenuActivity.class));
+	}
+	
 	private void setup() {
 		setContentView(R.layout.activity_main);
 
