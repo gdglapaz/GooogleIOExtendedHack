@@ -45,6 +45,11 @@ public class SignInActivity extends FragmentActivity
     	super.onStart();
     	//g    	db.abrir();
     }
+    
+    public void showMainMenu(View v) {
+		startActivity(new Intent(this, MainMenuActivity.class));
+	}
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
