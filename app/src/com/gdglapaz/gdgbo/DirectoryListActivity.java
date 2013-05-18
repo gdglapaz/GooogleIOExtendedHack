@@ -76,14 +76,14 @@ public class DirectoryListActivity extends Activity {
 		} catch (JSONException e) {
 			e.printStackTrace();
 		}
-		
+		/*
 		ListAdapter adapter = new SimpleAdapter(this, contactList,
 				R.layout.list_item,
 				new String[] { TAG_NAME, TAG_SUCURSAL }, new int[] {
 						R.id.name, R.id.mobile });
 
 		setListAdapter(adapter);
-
+*/
 		// selecting single ListView item
 		ListView lv = getListView();
 
