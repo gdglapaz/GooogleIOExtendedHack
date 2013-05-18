@@ -83,9 +83,9 @@ public class DirectoryListActivity extends Activity {
 						R.id.name, R.id.mobile });
 
 		setListAdapter(adapter);
-*/
+
 		// selecting single ListView item
-		ListView lv = getListView();
+		ListView lv = getListView();*/
 
 		// Launching new screen on Selecting Single ListItem
 		/*lv.setOnItemClickListener(new OnItemClickListener() {
